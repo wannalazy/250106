@@ -1,151 +1,151 @@
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
+ï»¿using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 /// <summary>
-/// ¤èªk
-/// ¤¤¤å : ¤èªk¡B¨ç¦¡¡B¨ç¼Æ¡B¥\¯à
-/// ­^¤å : function¡Bmethod (Unity)
+/// æ–¹æ³•
+/// ä¸­æ–‡ : æ–¹æ³•ã€å‡½å¼ã€å‡½æ•¸ã€åŠŸèƒ½
+/// è‹±æ–‡ : functionã€method (Unity)
 /// </summary>
 public class Class_4_Function : MonoBehaviour
 {
     public void Awake()
     {
-        #region ¤èªk°ò¥»»yªk»y°Ñ¼Æ©I¥s
-        // ©I¥s¤èªk : ¤èªk¨S¦³©I¥s¤£·|°õ¦æ
-        // ¤èªk¦WºÙ();
+        #region æ–¹æ³•åŸºæœ¬èªæ³•èªåƒæ•¸å‘¼å«
+        // å‘¼å«æ–¹æ³• : æ–¹æ³•æ²’æœ‰å‘¼å«ä¸æœƒåŸ·è¡Œ
+        // æ–¹æ³•åç¨±();
         FirstFunction();
         FirstFunction();
-        // ©I¥s¦³°Ñ¼Æªº¤èªk : ¤p¬A¸¹¤º­n©ñ¤J¤Ş¼Æ
-        // UseSkill(); //¿ù»~ : ¤Ö¤F¤Ş¼Æ
-        UseSkill("°j¤Ñ", 30);
-        UseSkill("ºë·Ç®gÀ»", 50);
-        // ©I¥s¦³¹w³]­È°Ñ¼Æªº¤èªk : ¥i¥H¤£¥Î¶ñ (¿ï¶ñ¦¡°Ñ¼Æ)
+        // å‘¼å«æœ‰åƒæ•¸çš„æ–¹æ³• : å°æ‹¬è™Ÿå…§è¦æ”¾å…¥å¼•æ•¸
+        // UseSkill(); //éŒ¯èª¤ : å°‘äº†å¼•æ•¸
+        UseSkill("è¿´å¤©", 30);
+        UseSkill("ç²¾æº–å°„æ“Š", 50);
+        // å‘¼å«æœ‰é è¨­å€¼åƒæ•¸çš„æ–¹æ³• : å¯ä»¥ä¸ç”¨å¡« (é¸å¡«å¼åƒæ•¸)
         SpawnEnemy();
-        SpawnEnemy("¤ÚÃ¹º¸");
+        SpawnEnemy("å·´ç¾…çˆ¾");
         Fire(700);
-        Fire(800, "«OÄÖ²y");
-        // ¦³¦h®æ¿ï¾Ü©Ê°Ñ¼Æ®Éªº©I¥s
-        // ¶R¬õ¤ô¡A50­Ó
+        Fire(800, "ä¿é½¡çƒ");
+        // æœ‰å¤šæ ¼é¸æ“‡æ€§åƒæ•¸æ™‚çš„å‘¼å«
+        // è²·ç´…æ°´ï¼Œ50å€‹
         BuyItem();
-        // ¶R¬õ¤ô¡A30­Ó
-        // BuyItem(30);  ¿ù»~ : 30 ·|ª½±µ±a¤J¨ì item °Ñ¼Æ¾É­P¸ê®ÆÃş«¬¤£²Å¦X
+        // è²·ç´…æ°´ï¼Œ30å€‹
+        // BuyItem(30);  éŒ¯èª¤ : 30 æœƒç›´æ¥å¸¶å…¥åˆ° item åƒæ•¸å°è‡´è³‡æ–™é¡å‹ä¸ç¬¦åˆ
         BuyItem(count: 30);
-        // ¶RÂÅ¤ô¡A50­Ó
-        BuyItem("¯S¯Å¥Í©RÃÄ¤ô");
-        // ¶RÂÅ¤ô¡A30­Ó
-        BuyItem("ÂÅ¤ô", 100);
+        // è²·è—æ°´ï¼Œ50å€‹
+        BuyItem("ç‰¹ç´šç”Ÿå‘½è—¥æ°´");
+        // è²·è—æ°´ï¼Œ30å€‹
+        BuyItem("è—æ°´", 100);
         #endregion
 
-        // ©I¥s¦³¶Ç¦^¤èªk
-        // ²Ä¤@ºØ : §âµ²ªG©ñ¨ì°Ï°ìÅÜ¼Æ¤º 
+        // å‘¼å«æœ‰å‚³å›æ–¹æ³•
+        // ç¬¬ä¸€ç¨® : æŠŠçµæœæ”¾åˆ°å€åŸŸè®Šæ•¸å…§ 
         int number9 = Square(9);
-        Debug.Log($"<Color=#a33>9 ªº¥­¤è {number9}<color>");
-        // ²Ä¤GºØ : §â¶Ç¦^¤èªk·í§@¸Ó¶Ç¦^Ãş«¬¨Ï¥Î
-        Debug.Log($"<Color=#a33>7 ªº¥­¤è {Square(7)}<color>");
-        // ½Ò°ó½m²ß(BMI)
+        Debug.Log($"<Color=#a33>9 çš„å¹³æ–¹ {number9}<color>");
+        // ç¬¬äºŒç¨® : æŠŠå‚³å›æ–¹æ³•ç•¶ä½œè©²å‚³å›é¡å‹ä½¿ç”¨
+        Debug.Log($"<Color=#a33>7 çš„å¹³æ–¹ {Square(7)}<color>");
+        // èª²å ‚ç·´ç¿’(BMI)
         Debug.Log($"<Color=#a39>BMI {Bmi(60,1.6f)}<color>");
         Move();
         Move(50.5f);
     }
 
-    // ®Ø¿ï­n¾ã²zªºµ{¦¡ > Ctrl + K S > #region §Ö³t§¹¦¨µ{¦¡½X¤ù¬q
-    #region ¤èªk°ò¥»»yªk»P°Ñ¼Æ
-    // ¤èªk :
-    // ¥]§t¤@¨t¦Cµ{¦¡°Ï¶ô
-    // ¤èªk»P»yªk : 
-    // ­×¹¢µü ¶Ç¦^¸ê®ÆÃş«¬ ¤èªk¦WºÙ (°Ñ¼Æ1¡A°Ñ¼Æ.....¡A°Ñ¼Æn) { µ{¦¡°Ï¶ô }
-    // ¤èªk©R¦W²ßºD : Unity ²ßºD¨Ï¥Î¤j¼g¶}ÀY©R¦W¤èªk
-    // void µL¶Ç¦^ : ¨Ï¥Î¦¹¤èªk¤£·|¦³¶Ç¦^¸ê®Æ
+    // æ¡†é¸è¦æ•´ç†çš„ç¨‹å¼ > Ctrl + K S > #region å¿«é€Ÿå®Œæˆç¨‹å¼ç¢¼ç‰‡æ®µ
+    #region æ–¹æ³•åŸºæœ¬èªæ³•èˆ‡åƒæ•¸
+    // æ–¹æ³• :
+    // åŒ…å«ä¸€ç³»åˆ—ç¨‹å¼å€å¡Š
+    // æ–¹æ³•èˆ‡èªæ³• : 
+    // ä¿®é£¾è© å‚³å›è³‡æ–™é¡å‹ æ–¹æ³•åç¨± (åƒæ•¸1ï¼Œåƒæ•¸.....ï¼Œåƒæ•¸n) { ç¨‹å¼å€å¡Š }
+    // æ–¹æ³•å‘½åç¿’æ…£ : Unity ç¿’æ…£ä½¿ç”¨å¤§å¯«é–‹é ­å‘½åæ–¹æ³•
+    // void ç„¡å‚³å› : ä½¿ç”¨æ­¤æ–¹æ³•ä¸æœƒæœ‰å‚³å›è³‡æ–™
     private void FirstFunction()
     {
-        Debug.Log("²Ä¤@­Ó¤èªk");
+        Debug.Log("ç¬¬ä¸€å€‹æ–¹æ³•");
     }
 
-    // °Ñ¼Æ»yªk : »P°Ï°ìÅÜ¼Æ¬Û¦P ¸ê®ÆÃş«¬ °Ñ¼Æ¦WºÙ (²ßºD¥Î¤p¼g©ÎªÌ¥[©³½u¶}ÀY)
+    // åƒæ•¸èªæ³• : èˆ‡å€åŸŸè®Šæ•¸ç›¸åŒ è³‡æ–™é¡å‹ åƒæ•¸åç¨± (ç¿’æ…£ç”¨å°å¯«æˆ–è€…åŠ åº•ç·šé–‹é ­)
     private void UseSkill(string skill, float cost)
     {
-        Debug.Log($"<color=#f93>¬I©ñ§Ş¯à : {skill}<color>");
-        Debug.Log($"<color=#f93>§Ş¯à®ø¯Ó : {cost}<color>");
+        Debug.Log($"<color=#f93>æ–½æ”¾æŠ€èƒ½ : {skill}<color>");
+        Debug.Log($"<color=#f93>æŠ€èƒ½æ¶ˆè€— : {cost}<color>");
     }
 
-    private void SpawnEnemy(string enemy = "¥Õ°­")
+    private void SpawnEnemy(string enemy = "ç™½é¬¼")
     {
-        Debug.Log($"<color=#f33>¥Í¦¨¼Ä¤H : {enemy}<color>");
+        Debug.Log($"<color=#f33>ç”Ÿæˆæ•µäºº : {enemy}<color>");
     }
 
-    /// ¨S¦³¹w³]­ÈºÙ¬° : ¥²­n°Ñ¼Æ¡A¦³¹w³]­ÈºÙ¬°¿ï¾Ü©Ê°Ñ¼Æ
-    /// ¿ï¾Ü©Ê°Ñ¼Æ­n¼g¦b¥kÃä
-    ///private void Fire(string fire = "¤l¼u", int speed)
+    /// æ²’æœ‰é è¨­å€¼ç¨±ç‚º : å¿…è¦åƒæ•¸ï¼Œæœ‰é è¨­å€¼ç¨±ç‚ºé¸æ“‡æ€§åƒæ•¸
+    /// é¸æ“‡æ€§åƒæ•¸è¦å¯«åœ¨å³é‚Š
+    ///private void Fire(string fire = "å­å½ˆ", int speed)
     ///{
-    ///   Debug.Log($"<color=#66f>µo®gª«¥ó : {fire}¡A³t«× : {speed}<color>");
+    ///   Debug.Log($"<color=#66f>ç™¼å°„ç‰©ä»¶ : {fire}ï¼Œé€Ÿåº¦ : {speed}<color>");
     ///}
 
     /// <summary>
-    /// µo®gª«¥ó¤èªk
+    /// ç™¼å°„ç‰©ä»¶æ–¹æ³•
     /// </summary>
-    /// <param name="fire">µo®gª«¥ó</param
-    /// <param name="speed">µo®g³t«×</param>
-    private void Fire(int speed, string fire = "¤l¼u")
+    /// <param name="fire">ç™¼å°„ç‰©ä»¶</param
+    /// <param name="speed">ç™¼å°„é€Ÿåº¦</param>
+    private void Fire(int speed, string fire = "å­å½ˆ")
     {
-        Debug.Log($"<color=#66f>µo®gª«¥ó : {fire}¡A³t«× : {speed}<color>");
+        Debug.Log($"<color=#66f>ç™¼å°„ç‰©ä»¶ : {fire}ï¼Œé€Ÿåº¦ : {speed}<color>");
     }
 
     /// <summary>
-    /// ÁÊ¶R¹D¨ã
+    /// è³¼è²·é“å…·
     /// </summary>
-    /// <param name="item">¹D¨ã¦WºÙ</param
-    /// <param name="count">¹D¨ã¼Æ¶q</param>
-    private void BuyItem(string item = "¬õ¤ô", int count = 50)
+    /// <param name="item">é“å…·åç¨±</param
+    /// <param name="count">é“å…·æ•¸é‡</param>
+    private void BuyItem(string item = "ç´…æ°´", int count = 50)
     {
-        Debug.Log($"<color=#3f3>ÁÊ¶R°Ó«~ : {item}¡A¼Æ¶q : {count}<color>");
+        Debug.Log($"<color=#3f3>è³¼è²·å•†å“ : {item}ï¼Œæ•¸é‡ : {count}<color>");
     }
     #endregion
 
-    #region ¶Ç¦^
-    // ¶Ç¦^¤èªk : ¶Ç¦^Ãş«¬¤£¬O void ¡A ©I¥s¸Ó¤èªk·|Àò±oµ²ªG
-    // ¶Ç¦^¤èªk¥²¶·¦b {} ¤º¨Ï¥Î return ÃöÁä¦r±Nµ²ªG¶Ç¦^
+    #region å‚³å›
+    // å‚³å›æ–¹æ³• : å‚³å›é¡å‹ä¸æ˜¯ void ï¼Œ å‘¼å«è©²æ–¹æ³•æœƒç²å¾—çµæœ
+    // å‚³å›æ–¹æ³•å¿…é ˆåœ¨ {} å…§ä½¿ç”¨ return é—œéµå­—å°‡çµæœå‚³å›
     /// <summary>
-    /// ¥­¤è
+    /// å¹³æ–¹
     /// </summary>
-    /// <param name="number">­n¥­¤èªº¼Æ¦r</param>
-    /// <retrun>¼Æ¦rªº¥­¤è</param>
+    /// <param name="number">è¦å¹³æ–¹çš„æ•¸å­—</param>
+    /// <retrun>æ•¸å­—çš„å¹³æ–¹</param>
     private int Square(int number)
     {
         return number * number;
     }
 
     /// <summary>
-    /// BMI­pºâ
+    /// BMIè¨ˆç®—
     /// </summary>
-    /// <param name="weight">Åé­«</param>
-    /// <param name="height">¨­°ª</param>
+    /// <param name="weight">é«”é‡</param>
+    /// <param name="height">èº«é«˜</param>
     private float Bmi(int weight, float height)
     {
         return weight / (height * height);
     } 
     #endregion
 
-    // ¦WºÙ¤£¯à­«½Æ¡AÃş§O¡BÅÜ¼Æ»P¤èªk
+    // åç¨±ä¸èƒ½é‡è¤‡ï¼Œé¡åˆ¥ã€è®Šæ•¸èˆ‡æ–¹æ³•
     private void Test() { }
-    // private void Test() { }  // ¦WºÙ­«½Æªº¿ù»~
+    // private void Test() { }  // åç¨±é‡è¤‡çš„éŒ¯èª¤
 
-    // ¤èªk¦h¸ü function overload
-    // °Ñ¼ÆªºÃş«¬³f¼Æ¶q¤£¦P
-    // ¹s­Ó°Ñ¼Æ
+    // æ–¹æ³•å¤šè¼‰ function overload
+    // åƒæ•¸çš„é¡å‹è²¨æ•¸é‡ä¸åŒ
+    // é›¶å€‹åƒæ•¸
     /// <summary>
-    /// ²¾°Ê
+    /// ç§»å‹•
     /// </summary>
     private void Move() 
     {
-        Debug.Log("<color=#19f>²¾°Ê¤¤</color>");
+        Debug.Log("<color=#19f>ç§»å‹•ä¸­</color>");
     }
-    // ¤@­Ó°Ñ¼Æ
+    // ä¸€å€‹åƒæ•¸
     /// <summary>
-    /// ²¾°Ê¤èªk¨Ã«ü©w³t«×
+    /// ç§»å‹•æ–¹æ³•ä¸¦æŒ‡å®šé€Ÿåº¦
     /// </summary>
-    /// <param name="speed">²¾°Ê³t«×</param>
+    /// <param name="speed">ç§»å‹•é€Ÿåº¦</param>
     private void Move(float speed)
     {
-        Debug.Log($"<color=#19f>²¾°Ê¤¤¡A³t«× : {speed}</color>");
+        Debug.Log($"<color=#19f>ç§»å‹•ä¸­ï¼Œé€Ÿåº¦ : {speed}</color>");
     }
 }
