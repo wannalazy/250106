@@ -38,7 +38,7 @@ namespace WRX
         // 更新事件 : 一秒鐘執行約 60 次 (60FPS) Frame Per Second
         private void Update()
         {
-            Debug.Log("<color=#79f>更新中 60FPS</color>");
+            Debug.Log("<color=#79f>60FPS更新中</color>");
 
             // 如果 isMove 布林值等於 True ，就顯示持續移動
             if (isMove)
