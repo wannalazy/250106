@@ -1,11 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+/// <summary>
+/// ç·´ç¿’ : å‡½å¼
+/// </summary>
 public class practice_4_Function : MonoBehaviour
 {
     private void Awake()
     {
-        int atk = 50000, speed = 90;
-        Debug.Log($"<Color=#a18>atk¬O§_¤j©óspeed? ¸Ñµª : {atk > speed}<color>");
-        Debug.Log($"<Color=#a18>atk¬O§_µ¥©óspeed? ¸Ñµª : {atk == speed}<color>");
+        Debug.Log($"<color=#3f3>å¸ƒæ—å€¼ True : {ReturneTrue()}<color>");
+        Debug.Log($"<color=#3f3>å¸ƒæ—å€¼ False : {ReturneFalse()}<color>");
+    }
+
+    /// <summary>
+    /// å¸ƒæ—å€¼ True
+    /// </summary>
+    /// <returns>True</returns>
+    private bool ReturneTrue() 
+    {
+        return true;
+    }
+
+    /// <summary>
+    /// å¸ƒæ—å€¼ False
+    /// </summary>
+    /// <returns>True</returns>
+    private bool ReturneFalse()
+    {  
+        return false;
     }
 }
