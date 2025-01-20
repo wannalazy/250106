@@ -1,15 +1,15 @@
-using System.Runtime.CompilerServices;
+ï»¿using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class practice_3_operator : MonoBehaviour
 {
     private void Awake()
     {
-        // 6 ¡Ò 2 (1 + 2)
-        // ÃD¥Ø°İÃD
-        // ¥ş³¡¼g²Å¸¹
-        // ©Î¥ş³¡¬Ù²¤
-        // 1 ©Î 9
+        // 6 Ã· 2 (1 + 2)
+        // é¡Œç›®å•é¡Œ
+        // å…¨éƒ¨å¯«ç¬¦è™Ÿ
+        // æˆ–å…¨éƒ¨çœç•¥
+        // 1 æˆ– 9
         int answer = 6 / 2 * (1 + 2);
         Debug.Log($"<color=#f33>6 / 2 * (1 + 2) = {answer}<color>");
     }
