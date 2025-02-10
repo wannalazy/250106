@@ -1,61 +1,83 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace WRX
 {
     /// <summary>
-    /// ¦CÁ| : enumeration¡AC# ¤ºÃöÁä¦r¬°Â²¼g enum
+    /// åˆ—èˆ‰ : enumerationï¼ŒC# å…§é—œéµå­—ç‚ºç°¡å¯« enum
     /// </summary>
     public class Class_5_2_Enumeration : MonoBehaviour
     {
-        #region »{ÃÑ¦CÁ|°ò¥»¥Îªk
-        // ¦CÁ| : ©w¸q¤U©Ô¿ï³æªº¿ï¶µ (³q±`³£¬O³æ¿ï)
-        // »yªk :
-        // ­×¹¢µü ÃöÁä¦r enum ¦CÁ|¦WºÙ { ¦CÁ|¿ï¶µ }
-        // ©w¸q¤@­Ó¦CÁ|¡A¦WºÙ¥s°µ©u¸`
-        // ¦CÁ|³£¬O¼Æ­È¡A¹w³]±q 0 ¶}©l
+        #region èªè­˜åˆ—èˆ‰åŸºæœ¬ç”¨æ³•
+        // åˆ—èˆ‰ : å®šç¾©ä¸‹æ‹‰é¸å–®çš„é¸é … (é€šå¸¸éƒ½æ˜¯å–®é¸)
+        // èªæ³• :
+        // ä¿®é£¾è© é—œéµå­— enum åˆ—èˆ‰åç¨± { åˆ—èˆ‰é¸é … }
+        // å®šç¾©ä¸€å€‹åˆ—èˆ‰ï¼Œåç¨±å«åšå­£ç¯€
+        // åˆ—èˆ‰éƒ½æ˜¯æ•¸å€¼ï¼Œé è¨­å¾ 0 é–‹å§‹
         private enum Season
         {
-            // ©w¸q¦CÁ|¿ï¶µ
+            // å®šç¾©åˆ—èˆ‰é¸é …
             Spring, Summer, Autumn, Winter
         }
 
-        // «Å§iÅÜ¼Æ¡AÃş«¬¬°©u¸`¦CÁ|¡A¹w³]¬°®L¤Ñ
-        [SerializeField, Header("©u¸`")]
+        // å®£å‘Šè®Šæ•¸ï¼Œé¡å‹ç‚ºå­£ç¯€åˆ—èˆ‰ï¼Œé è¨­ç‚ºå¤å¤©
+        [SerializeField, Header("å­£ç¯€")]
         private Season season = Season.Summer;
 
         private void Awake()
         {
-            // ¨ú±o ¦CÁ|­È (Get) §ì¥X­È
+            // å–å¾— åˆ—èˆ‰å€¼ (Get) æŠ“å‡ºå€¼
             Debug.Log(season);
-            // ¨ú±o¦CÁ|­Èªº¾ã¼Æ­È
+            // å–å¾—åˆ—èˆ‰å€¼çš„æ•´æ•¸å€¼
             Debug.Log((int)season);
 
-            // ³]©w ¦CÁ|­È (Set) ­×§ï­È
+            // è¨­å®š åˆ—èˆ‰å€¼ (Set) ä¿®æ”¹å€¼
             season = Season.Winter;
             Debug.Log(season);
-            // ³z¹L¼Æ­È³]©w¦CÁ|
+            // é€éæ•¸å€¼è¨­å®šåˆ—èˆ‰
             season = (Season)2;
             Debug.Log(season);
         }
         #endregion
 
-        // ©w¸q¦CÁ|¼Æ­È
+        // å®šç¾©åˆ—èˆ‰æ•¸å€¼
         /// <summary>
-        /// ¹D¨ã
+        /// é“å…·
         /// </summary>
         private enum Item
         {
-            None = 0, Coin = 1, Redwater = 10, Bluewater = 10, Chicken = 20
+            None = 0, Coin = 1, Redwater = 10, Bluewater = 15, Chicken = 20
         }
 
-        [SerializeField, Header("¹D¨ã")]
+        [SerializeField, Header("é“å…·")]
         private Item item = Item.Chicken;
 
-        // °õ¦æ¶¶§Ç : Awake > Start > Update
-        // ¶}©l¨Æ¥ó : ¦b³ê¿ô¨Æ¥ó«á°õ¦æ¤@¦¸ (ªì©l¤Æ)
+        // åŸ·è¡Œé †åº : Awake > Start > Update
+        // é–‹å§‹äº‹ä»¶ : åœ¨å–šé†’äº‹ä»¶å¾ŒåŸ·è¡Œä¸€æ¬¡ (åˆå§‹åŒ–)
         private void Start()
         {
             Debug.Log((int)item);
+
+            // åˆ—èˆ‰èˆ‡åˆ¤æ–·å¼ switch
+            // switch +Tab * 2 > ä¿®æ”¹ switch_on ç‚ºåˆ—èˆ‰ > Enter *2 å¿«é€Ÿå®Œæˆ
+            switch (item)
+            {
+                case Item.None:
+                    Debug.Log("æ²’æœ‰é“å…·");
+                    break;
+                case Item.Coin:
+                    Debug.Log("é‡‘å¹£");
+                    break;
+                case Item.Redwater:
+                case Item.Bluewater:
+                    Debug.Log("è—¥æ°´é“å…·");
+                    break;
+                case Item.Chicken:
+                    Debug.Log("ç‚¸é›");
+                    break;
+                default:
+                    Debug.Log("é€™ä¸æ˜¯é“å…·");
+                    break;
+            }
         }
     }
 }
