@@ -13,12 +13,13 @@ namespace WRX
         private void Awake()
         {
             // 實例化 NPC 並儲存在 npcJack 變數內
-            Class_8_1_NPC npcJack = new Class_8_1_NPC(); 
-            Class_8_1_NPC npcWRX = new Class_8_1_NPC("WRX");
+            Class_8_1_NPC npcJack = new Class_8_1_NPC("捷克"); 
+            Class_8_1_NPC npcWRX = new Class_8_1_NPC("WRX","你好啊~");
 
             npcJack.LogName();
             npcWRX.LogName();
-
+            npcJack.Talk();
+            npcWRX.Talk();
         }
     }
 }
