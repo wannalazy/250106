@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace WRX
@@ -8,6 +9,7 @@ namespace WRX
     /// </summary>
     public class Class_7_2_static : MonoBehaviour
     {
+        #region 變數與屬性
         // 非靜態變數
         public int inventoryWater = 10;
         // 靜態變數 : 修飾詞後面添加關鍵字 static
@@ -18,6 +20,10 @@ namespace WRX
         public string skillMain => "火球術";
         // 靜態屬性
         public static string skillSecond => "治癒術";
+        #endregion
+
+        private float attack = 10;
+        private static float mp = 100;
 
         private void Awake()
         {
@@ -30,11 +36,18 @@ namespace WRX
         public void Punch()
         {
             Debug.Log($"<color=#f3d>使用拳擊<color>");
+            // 非靜態方法內可以存取所有成員
+            Debug.Log($"<color=#f9e>非靜態攻擊力 : {attack}<color>");
+            Debug.Log($"<color=#f9e>靜態魔力 : {mp}<color>");
         }
 
         public static void Kick()
         {
             Debug.Log($"<color=#f3d>使用踢擊<color>");
+            // 靜態方法內只能存取靜態成員
+            // 由於 attack 是非靜態所以無法存取 (導致錯誤)
+            // Debug.Log($"<color=#f9e>非靜態攻擊力 : {attack}<color>");
+            Debug.Log($"<color=#f9e>靜態魔力 : {mp}<color>");
         }
 
         private void Start()
