@@ -1,5 +1,11 @@
 ﻿using WRX.Tools;
 using UnityEngine;
+// 資料的型別
+//    型別     | 參考型別 | 實值型別
+// 記憶體位置   | Heap堆  | Stack棧
+//    資料     |    類別  |結構
+// 資料傳遞方式 |  傳址    |  傳值
+
 
 namespace WRX 
 {
