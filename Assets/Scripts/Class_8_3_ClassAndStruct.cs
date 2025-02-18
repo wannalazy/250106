@@ -29,6 +29,33 @@ namespace WRX
             // LogSystem.LogWithColor(struct2.ToString(),"#f96");
         }
 
+        private void Start()
+        {
+            // var 不指定類型，可以儲存所有資料
+            var textClass = new Class_8_4_Class("我是類別");
+            var textstruct = new Class_8_4_Struct("我是結構");
+
+            var textClass2 = new Class_8_4_Class("我是類別2");
+            var textstruct2 = new Class_8_4_Struct("我是結構2");
+
+            LogSystem.LogWithColor(textClass.name, "#79f");
+            LogSystem.LogWithColor(textClass2.name, "#79f");
+            LogSystem.LogWithColor(textstruct.name, "#79f");
+            LogSystem.LogWithColor(textstruct2.name, "#79f");
+
+            textClass2 = textClass;   // 傳址 : 這時候的 class 與 class2 指向同一個地址
+            textstruct2 = textstruct; // 傳值 : 這時候的 struct 與 struct2 指向同一個值
+
+            // 修改 class 或 class2 資料都會同步
+            textClass.name = "類別";
+            LogSystem.LogWithColor(textClass.name, "#f79");
+            LogSystem.LogWithColor(textClass2.name, "#f79");
+            // 修改 struct 或 struct2 資料不會同步
+            textstruct.name = "結構";
+            LogSystem.LogWithColor(textstruct.name, "#f79");
+            LogSystem.LogWithColor(textstruct2.name, "#f79");
+        }
+
     }
 
     // 類別 : 
