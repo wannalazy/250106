@@ -24,9 +24,15 @@ namespace WRX.Class_15
         public void Use();
     }
 
+    public interface IDestroy
+    {
+        // 不用宣告方法主體，不用寫大括號
+        public void Destroy();
+    }
+
     // 步驟2.
     // C# 單一繼承，多重實作介面
-    public class Weapon : IUse 
+    public class Weapon : IUse
     {
         // 步驟3.
         public void Use()
@@ -35,16 +41,26 @@ namespace WRX.Class_15
         }
     }
 
-    public class Potion : IUse
+    public class Potion : IUse,IDestroy
     {
+        public void Destroy()
+        {
+            LogSystem.LogWithColor("藥水使用完畢，刪除", "#f11");
+        }
+
         public void Use()
         {
             LogSystem.LogWithColor("使用藥水，恢復血量", "#fa3");
         }
     }
 
-    public class Chest : IUse
+    public class Chest : IUse, IDestroy
     {
+        public void Destroy()
+        {
+            LogSystem.LogWithColor("寶箱使用完畢，刪除", "#f11");
+        }
+
         public void Use()
         {
             LogSystem.LogWithColor("使用寶箱，獲得道具", "#fa3");

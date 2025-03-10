@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using WRX.Tools;
 
 namespace WRX.Class_15      // 添加命名空間避免名稱衝突
@@ -9,6 +10,7 @@ namespace WRX.Class_15      // 添加命名空間避免名稱衝突
     public class Class_15_Interface : MonoBehaviour
     {
         public object invertoryFirst;
+        public object invertorySecond;
 
         private void Awake()
         {
@@ -18,6 +20,13 @@ namespace WRX.Class_15      // 添加命名空間避免名稱衝突
             if (random == 0) invertoryFirst = new Prop();
             else if (random == 1) invertoryFirst = new Equipment();
             else if (random == 2) invertoryFirst = new Map();
+
+            int randomSecond = Random.Range(0, 3);                    // 隨機 0 ~ 3 (不會出現 3)
+            LogSystem.LogWithColor($"隨機:{random}", "#f33");
+
+            if (randomSecond == 0) invertorySecond = new Weapon();
+            else if (randomSecond == 1) invertorySecond = new Potion();
+            else if (randomSecond == 2) invertorySecond = new Chest();
         }
 
         private void Update()
@@ -34,6 +43,15 @@ namespace WRX.Class_15      // 添加命名空間避免名稱衝突
                 else if (invertoryFirst is Map) ((Map)invertoryFirst).Use();
 
                 // 當遊戲物品種類多的時候，這裡的判斷式會很恐怖...
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                // 如果第二格道具的物品有實作介面 就 使用
+                if (invertorySecond is IUse) ((IUse)invertorySecond).Use();
+
+                if (invertorySecond is IDestroy) ((IDestroy)invertorySecond).Destroy();
+                // 如果擴充物品，判斷是不需要添加，只需要讓物品都實作介面即可
             }
         }
     }
