@@ -11,6 +11,7 @@ namespace WRX.Class_18
     {
         private void Awake()
         {
+            #region 例外處理
             LogSystem.LogWithColor($"{Division(8, 4)}", "#f33");
             LogSystem.LogWithColor($"{Division(3, 9)}", "#f33");
             LogSystem.LogWithColor($"{Division(7, 0)}", "#f33");
@@ -20,8 +21,29 @@ namespace WRX.Class_18
             LogSystem.LogWithColor($"{GetScores(9)}", "#3f3");
 
             SetEnemy();
+            #endregion
+            try
+            {
+                Damage(35);
+                Damage(70);
+            }
+            catch (Exception e)
+            {
+                LogSystem.LogWithColor(e, "#fa9");
+            }
+
+            try
+            {
+                Cure(30);
+                Cure(-10);
+            }
+            catch (CureValueLowerZeroException e)
+            {
+                LogSystem.LogWithColor(e.Message, "#7f3");
+            }
         }
 
+        #region 例外處理
         /// <summary>
         /// 除法
         /// </summary>
@@ -87,6 +109,48 @@ namespace WRX.Class_18
                 LogSystem.LogWithColor($"發生例外 | {e.Message}", "#f39");
             }
         }
+        #endregion
+
+        private float hp = 100;
+
+        private void Damage(float damage)
+        {
+            hp -= damage;
+
+            if (hp < 0)
+            {
+                // 自訂例外
+                throw new Exception("血量小於零");
+            }
+            else
+            {
+                LogSystem.LogWithColor($"血量 :{hp}", "#93f");
+            }
+        }
+
+        private void Cure(float cure)
+        {
+            if (cure < 0)
+            {
+                throw new CureValueLowerZeroException("治療值低於零");
+            }
+            else
+            { 
+                hp += cure;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 治療值低於零例外
+    /// </summary>
+    public class CureValueLowerZeroException : Exception
+    { 
+        /// <summary>
+        /// 建構子
+        /// </summary>
+        /// <param name="message">例外訊息</param>
+        public CureValueLowerZeroException(string message): base(message) { }
     }
 }
 
